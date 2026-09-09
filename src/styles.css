@@ -28,14 +28,49 @@ header {
   letter-spacing: -0.01em; /* Subtle modern UI spacing adjustment */
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+}
+
 .container {
   max-width: 1400px;
   margin: 0 auto;
 }
 footer {
   text-align: center;
+  color: #ffff;
+  background-image:
+    linear-gradient(rgba(39, 32, 68, 0.9), rgba(0, 0, 0, 0.8)),
+    url("../images/teyana_taylor_durag_cape.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0;
+  margin: 0 10px;
 }
 
+footer p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  opacity: 0.9;
+}
+
+footer ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer a {
+  color: white;
+  opacity: 0.7;
+}
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 header a {
   font-weight: 700;
   font-size: 14px;
@@ -50,7 +85,12 @@ header a {
   display: inline-block;
 }
 
-@media (max-width: 800px) {
+footer h3 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+}
+@media (max-width: 960px) {
   header {
     padding: 60px 0;
   }
