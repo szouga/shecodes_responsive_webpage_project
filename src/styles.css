@@ -17,6 +17,38 @@ header {
   margin: 0;
 }
 
+main {
+  background-color: #ffff;
+}
+
+main h2 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 5px;
+  color: #272044;
+  opacity: 0.3;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+main h3 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.5;
+  color: #272044;
+  margin: 0;
+}
+
+main p {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #272044;
+  opacity: 0.7;
+}
+
 .heading {
   font-family: "Oswald", sans-serif;
   font-weight: 700;
@@ -38,7 +70,25 @@ header {
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
-  gap: 20px;
+  grid-gap: 20px;
+}
+
+.grid-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+}
+
+.grid-three-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 9px;
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 0;
 }
 
 .container {
@@ -76,10 +126,7 @@ footer a {
   color: white;
   opacity: 0.7;
 }
-section {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+
 header a {
   font-weight: 700;
   font-size: 14px;
@@ -111,5 +158,17 @@ footer h3 {
   }
   header h3 {
     font-size: 12px;
+  }
+  .grid {
+    grid-template-columns: auto;
+    grid-gap: 32px;
+  }
+
+  .img-responsive {
+    max-width: 100%;
+  }
+
+  section {
+    padding: 30px;
   }
 }
