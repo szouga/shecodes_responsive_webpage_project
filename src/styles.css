@@ -1,3 +1,15 @@
+header {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../images/teyana_taylor_durag_cape.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: #ffff;
+  padding: 280px 0;
+  margin: 0;
+}
+
 .heading {
   font-family: "Oswald", sans-serif;
   font-weight: 700;
@@ -11,7 +23,44 @@
   font-family: "Inter", sans-serif;
   font-weight: 500;
   /* font-size: 1rem; */
-  color: #111111;
+  color: #ffff;
   text-decoration: none;
   letter-spacing: -0.01em; /* Subtle modern UI spacing adjustment */
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+footer {
+  text-align: center;
+}
+
+header a {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: white;
+  padding: 16px 32px;
+  margin-top: 32px;
+  display: inline-block;
+}
+
+@media (max-width: 800px) {
+  header {
+    padding: 60px 0;
+  }
+  header h1 {
+    font-size: 48px;
+  }
+  header h2 {
+    font-size: 20px;
+  }
+  header h3 {
+    font-size: 12px;
+  }
 }
