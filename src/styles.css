@@ -21,6 +21,40 @@ header {
 main {
   background-color: #ffff;
 }
+.card {
+  background-color: #ffff;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 68px;
+}
+
+.card button {
+  display: block;
+  margin: 0 auto;
+  color: white;
+  font-weight: 700;
+  padding: 6px;
+  background-color: #462cb3;
+  text-decoration: none;
+}
+
+.card h4 {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #272044;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 5px;
+  color: #272044;
+  opacity: 0.3;
+  text-transform: uppercase;
+  margin: 0;
+}
 
 main h2 {
   font-weight: 700;
@@ -82,14 +116,22 @@ main p {
 
 .grid-three-columns {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 9px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+
+  /* 1. Pulls cards to the top, but lets them naturally take up vertical space */
+  align-items: stretch;
+
+  /* 2. Control the internal breathing room at the top and bottom of the section */
+  padding-top: 15px; /* Keeps them close to the text, but not touching */
+  padding-bottom: 70px; /* Gives them room to comfortably stretch downward */
 }
 
 section {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 60px 0 0 0;
+  background-color: #f8f8f8;
 }
 
 .container {
@@ -207,6 +249,10 @@ footer h3 {
   .grid {
     grid-template-columns: auto;
     grid-gap: 32px;
+  }
+  .grid-two-columns,
+  .grid-three-columns {
+    grid-template-columns: auto;
   }
 
   .img-responsive {
