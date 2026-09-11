@@ -21,6 +21,9 @@ header {
 main {
   background-color: #ffff;
 }
+.img-responsive {
+  width: 100%;
+}
 .card {
   background-color: #ffff;
   display: block;
@@ -34,7 +37,7 @@ main {
   color: white;
   font-weight: 700;
   padding: 6px;
-  background-color: #462cb3;
+  background-color: darkgray;
   text-decoration: none;
 }
 
@@ -138,6 +141,12 @@ section {
   max-width: 1400px;
   margin: 0 auto;
 }
+
+.embed {
+  width: 100%;
+  aspect-ratio: 1 /1;
+}
+
 footer {
   text-align: center;
   color: #ffff;
@@ -233,6 +242,56 @@ footer h3 {
 .back-to-top-button:active {
   transform: translateX(-50%) scale(0.98);
 }
+/* Container to help position the button over your image card */
+.play-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+/* The Nike style circular button wrapper */
+.play-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+
+  /* Semi-transparent white with a subtle background blur effect */
+  /* background-color: #831e1e; */
+  /* backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  /* Smooth transition animation */
+  transition:
+    transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+    background-color 0.2s ease;
+}
+
+/* The solid inner triangle icon */
+.play-arrow {
+  color: #ffffff;
+  font-size: 20px;
+  /* Visual correction: slides the triangle slightly right so it looks perfectly centered */
+  margin-left: 4px;
+  line-height: 1;
+}
+
+/* Nike Hover State Interaction */
+.play-btn:hover {
+  transform: scale(1.08); /* Distinct crisp expansion on hover */
+}
+
+/* Active State Interaction (When Clicked) */
+.play-btn:active {
+  transform: scale(0.96);
+}
+
 @media (max-width: 960px) {
   header {
     padding: 60px 0;
@@ -261,5 +320,8 @@ footer h3 {
 
   section {
     padding: 30px;
+  }
+  .embed {
+    aspect-ratio: 16 / 9;
   }
 }
