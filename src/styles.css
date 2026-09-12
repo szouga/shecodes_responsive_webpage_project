@@ -7,15 +7,82 @@ body {
 }
 
 header {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("../images/teyana_taylor_durag_cape.png");
-  background-repeat: no-repeat;
-  background-size: cover;
   text-align: center;
   color: #ffff;
   padding: 280px 0;
   margin: 0;
+}
+
+/* --- Optimized Header Integration (Replaces both of your previous rules) --- */
+.main-hero-header {
+  width: 100%;
+  box-sizing: border-box;
+
+  /* CORE ASPECT RATIO BALANCER */
+  height: auto;
+  aspect-ratio: 16 / 6; /* Uses a wide, cinematic format to showcase the full width of the collage without clipping the shoes */
+  min-height: 420px; /* Keeps the layout stable and spacious on smaller screens */
+
+  /* CLEAN CUSHION SPACING (Removed the conflicting 280px padding) */
+  padding: 40px 20px;
+  margin: 0;
+
+  /* FLEXBOX LAYOUT CORE ALIGNMENTS */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+
+  /* THE BG IMAGE CONFIGURATION MATRIX */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)),
+    url("/images/collage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* --- Font Visibility Fixes --- */
+.heading {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-size: 42px;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.separator {
+  color: #666;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.subheading {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 0 0 25px 0;
+
+  /* Your custom premium translucent faint style */
+  color: #ffff;
+  opacity: 0.45;
+
+  text-shadow:
+    0 0 4px rgba(0, 0, 0, 0.8),
+    0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.header-buttons a {
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 main {
@@ -38,6 +105,18 @@ main {
   font-weight: 700;
   padding: 6px;
   background-color: darkgray;
+  text-decoration: none;
+}
+
+.btn {
+  display: block;
+  margin: 0 auto;
+  color: white;
+  font-weight: 700;
+  /* padding: 6px; */
+  padding: 6px 6px;
+  width: 50%;
+  background-color: darkslategray;
   text-decoration: none;
 }
 
@@ -98,11 +177,20 @@ main p {
 
 .subheading {
   font-family: "Inter", sans-serif;
-  font-weight: 500;
-  /* font-size: 1rem; */
-  color: #ffff;
+  font-weight: 800;
+  font-size: 30px;
   text-decoration: none;
-  letter-spacing: -0.01em; /* Subtle modern UI spacing adjustment */
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+
+  /* CORE FIXES FOR FAINT ACCESSIBILITY */
+  color: #ffffff;
+  opacity: 0.45; /* Controls the exact level of transparency (0.0 to 1.0) */
+
+  /* Creates a subtle dark halo right under the letters to isolate them from background patterns */
+  text-shadow:
+    0 0 4px rgba(0, 0, 0, 0.8),
+    0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 .footer-grid {
@@ -292,6 +380,193 @@ footer h3 {
   transform: scale(0.96);
 }
 
+/*==========================================================================
+  UPDATED BLOCK: CSS Styling for the Adapter 22 3D Simulation (Split Grid)
+  ========================================================================== */
+/* Core 3-Column Horizontal Grid Container */
+.nike-terrain-container.side-by-side-split {
+  background-color: #111111;
+  color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 100%;
+  margin: 20px auto 40px auto;
+  font-family: "Inter", sans-serif;
+  border: 1px solid #222;
+
+  /* Creates three distinct side-by-side layout partitions */
+  display: grid;
+  grid-template-columns: 1fr 0.4fr 1.2fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.control-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.nike-terrain-container h4 {
+  color: #ffffff;
+  font-size: 20px;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.slider-rail-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#nikeTerrainSlider {
+  /* 1. Changes layout engine parsing from horizontal track to vertical track */
+  writing-mode: vertical-lr;
+  direction: rtl; /* Sets right-to-left layout tracking rules internally */
+
+  /* 2. Standard CSS transformations to scale it cleanly */
+  width: 12px;
+  height: 240px; /* Dictates how long the vertical tracking slider rail stretches down */
+  -webkit-appearance: none;
+  appearance: none;
+  background: #333333;
+  border-radius: 10px;
+  outline: none;
+  cursor: grab;
+
+  /* 3. Flips the track so Step 1 (Mud) sits up high and Step 6 (Water) sits down low */
+  transform: rotate(180deg);
+}
+
+/* Customizing the slider knob to be Nike Volt Green */
+#nikeTerrainSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: burlywood;
+  cursor: grabbing;
+  box-shadow: 0 0 10px rgba(222, 184, 135, 0.5);
+  transition: transform 0.1s ease;
+}
+
+#nikeTerrainSlider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Column 1: Left-Side Block Items Stack */
+.terrain-legend-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Uniform vertical spacing matching the list height layout */
+}
+
+.terrain-block {
+  background-color: transparent;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #666666;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.terrain-block.active-highlight {
+  color: #111111;
+  background-color: burlywood;
+  box-shadow: 0 4px 12px rgba(222, 184, 135, 0.3);
+  border-color: burlywood;
+  transform: translateX(4px);
+}
+
+/* Column 2: Center-Aligned Slider Space Track */
+.center-track-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 280px; /* Forces enough vertical space to align with your text row heights */
+}
+
+/* Telemetry Box Formatting */
+.hud-spec-display {
+  background-color: black;
+  padding: 20px;
+  border-left: 4px solid darkslategray;
+  border-radius: 4px;
+  /* margin-top: 15px; */
+}
+
+.hud-title {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: darkslategray;
+  margin: 0 0 5px 0;
+  font-weight: 900;
+  background-color: #ffff;
+}
+
+#hudTerrainName {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+}
+
+.hud-node-matrix p {
+  font-size: 12px;
+  margin: 10px 0;
+  color: #aaaaaa;
+  line-height: 1.4;
+}
+
+.hud-node-matrix span {
+  color: burlywood;
+  font-weight: 700;
+}
+
+/* Centers the 3D viewer canvas perfectly inside its layout card column */
+.nike-3d-frame {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto 20px auto; /* Margin matching your lower dashboard container spacing */
+  padding: 0; /* Clear inner paddings to let the model canvas fill the card column width */
+  overflow: hidden;
+}
+
+/* Container wrapper for smooth transition effects */
+#nike3DCanvasWrapper {
+  width: 100%;
+  height: 380px; /* Reduced from 450px to structurally match the HUD height ratio */
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Forces the interactive WebGL component to scale precisely within the layout column */
+model-viewer#nikeModel {
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+  background-color: #111111; /* Changed from cream to dark ash to match the left UI scheme seamlessly */
+  border-radius: 12px;
+  border: 1px solid #1a1a1a;
+
+  /* Eliminates residual shadow halos or default model borders */
+  outline: none;
+  --poster-color: transparent;
+}
+
+/* Global Media Query Preservations */
 @media (max-width: 960px) {
   header {
     padding: 60px 0;
@@ -323,5 +598,13 @@ footer h3 {
   }
   .embed {
     aspect-ratio: 16 / 9;
+  }
+}
+
+/* Responsive view optimization: Stacks them back to top/bottom cleanly on small mobile screens */
+@media (max-width: 768px) {
+  .nike-terrain-container.side-by-side-split {
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
 }

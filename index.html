@@ -3,57 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://gstatic.com" crossorigin />
-    <link href="https://googleapis.com" rel="stylesheet" />
 
+    <!-- 4. The Real Google 3D Engine Script Link -->
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"
+    ></script>
+
+    <!-- 1. Google Fonts Preconnect Connections -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- 2. FIXED: Core Fonts Stylesheet Link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Oswald:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 3. Local Custom CSS Stylesheet -->
     <link rel="stylesheet" href="src/styles.css" />
+
     <title>Nike Pitch Idea</title>
   </head>
+
   <body>
     <div id="top"></div>
     <div class="container">
-      <header>
+      <!--using embed for the header so the image doesn't appear blurry or cropped-->
+      <header class="main-hero-header">
         <h1 class="heading">Technology</h1>
-        <h3>x</h3>
-        <h2 class="subheading">Fashion</h2>
-        <a href="#learn-more" style="color: darkslategray">Learn more</a>
-        <a href="#view-exhibits" style="color: #831e1e">View Exhibits</a>
+        <h3 class="x">x</h3>
+        <h2 class="subheading" style="background-color: black; color: #ffff">
+          Fashion
+        </h2>
+        <div class="header-buttons">
+          <a href="#learn-more" style="color: darkslategray">Learn more</a>
+          <a href="#view-exhibits" style="color: burlywood">View Exhibits</a>
+        </div>
       </header>
     </div>
+
     <br />
 
-    <main style="text-align: center">
-      <!--The Pitch-->
-      <section
-        class="grid-two-columns"
-        style="
-          background-color: #831e1e;
-          border: 15px ridge burlywood;
-          max-width: 1200px;
-        "
-      >
-        <div>
-          <img
-            src="images/teyana_taylor_durag_cape.png"
-            alt="image of Teyana Taylor at the MET Gala"
-            style="width: 440px; height: 300px; border: 16px groove gray"
-            class="img-responsive"
-          />
-          <p style="background-color: #ffff">
-            Image Source and Caption place here
+    <main id="learn-more" style="text-align: center">
+      <!-- The Pitch Container Structure -->
+      <section class="grid-two-columns pitch-card">
+        <!-- Left Column: The Media Container -->
+        <div class="media-container">
+          <p class="caption-text">
+            <a
+              href="https://docs.google.com/presentation/d/12Mjv9R4aeITUGfekggayxovY1vGHDROJtuNC71vsJSA/edit?slide=id.p#slide=id.p"
+              target="_blank"
+            >
+              Image Source
+            </a>
           </p>
         </div>
-        <div style="background-color: #ffff">
+
+        <!-- Right Column: The Typography Text Stack Container -->
+        <div class="text-content-container">
           <h5><em>Pitch</em></h5>
-          <h2>Main Section Title</h2>
-          <h3>Main section subheading</h3>
-          <p>Main Section paragraph</p>
+          <h2 class="pitch-title">Main Section Title</h2>
+          <h3 class="pitch-subtitle">Main section subheading</h3>
+          <p class="pitch-paragraph">Main Section paragraph</p>
         </div>
       </section>
 
       <!--Project Apparel Ideas/Mockup Stage-->
-      <h5><em>Exhibits A-C</em></h5>
+      <h5 id="view-exhibits"><em>Exhibits A-C</em></h5>
       <h3>Apparel Projects</h3>
       <section class="grid-three-columns">
         <div class="card">
@@ -128,30 +145,108 @@
 
         <div class="card">
           <h2>Exhibit B</h2>
-          <img
-            src="images/teyana_taylor_durag_cape.png"
-            alt="image of Teyana Taylor at the MET Gala"
-            style="width: 340px; height: 200px"
-          />
-          <h4>Main Idea/Research</h4>
-          <p>
-            place research findings and <br />what this piece of apparel is
-            supposed to do <br />and why it is efficient. <br />place link to
-            simulation code in Google Colab below
-          </p>
-          <p>Press Run to play</p>
 
-          <div class="play-wrapper">
-            <button
-              class="play-btn"
-              aria-label="Play Simulation"
-              style="background-color: #831e1e"
+          <!-- Nike 3D Asset Live View Wrapper with Direct CSS Scaling Nodes -->
+          <div class="nike-3d-frame">
+            <div
+              id="nike3DCanvasWrapper"
+              style="
+                width: 100%;
+                height: 450px;
+                transition:
+                  transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  filter 0.3s ease;
+                transform-origin: center center;
+              "
             >
-              <span class="play-arrow">▶</span>
-            </button>
+              <model-viewer
+                id="nikeModel"
+                src="models/adapter_model.gltf"
+                alt="3D Interactive Model of Nike Adapter 23 Outsole Nodes"
+                auto-rotate
+                camera-controls
+                interaction-prompt="auto"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  background-color: #fcfbfa;
+                  display: block;
+                  border-radius: 8px;
+                  border: 1px solid #e2ded6;
+                "
+              >
+              </model-viewer>
+            </div>
           </div>
+
+          <!-- Nike Tech Pitch Interactive Controller -->
+
+          <!-- Upgraded Side-by-Side Nike Matrix Controller -->
+          <!-- Unified 3-Column Nike Terrain Layout Matrix -->
+          <div class="nike-terrain-container side-by-side-split">
+            <!-- Column 1: Left-side Navigation Stack -->
+            <div class="terrain-legend-column" id="terrainLegendList">
+              <div class="terrain-block" data-step="1">1. Mud</div>
+              <div class="terrain-block" data-step="2">2. Sand</div>
+              <div class="terrain-block" data-step="3">3. Concrete</div>
+              <div class="terrain-block active-highlight" data-step="4">
+                4. Smooth
+              </div>
+              <div class="terrain-block" data-step="5">5. Rough Rock</div>
+              <div class="terrain-block" data-step="6">6. Water</div>
+            </div>
+
+            <!-- Column 2: Center-aligned Slider Track (Rotated to align with the list positions) -->
+            <div class="center-track-column">
+              <div class="slider-rail-wrapper">
+                <input
+                  type="range"
+                  id="nikeTerrainSlider"
+                  min="1"
+                  max="6"
+                  value="4"
+                  step="1"
+                />
+              </div>
+            </div>
+
+            <!-- Column 3: Right-side Active Spec HUD Box -->
+            <div class="control-column">
+              <div class="hud-spec-display">
+                <p class="hud-title">ACTIVE STATE PROFILE:</p>
+                <h4 id="hudTerrainName">4. Smooth</h4>
+                <div class="hud-node-matrix">
+                  <p>
+                    <strong>Metatarsal Node:</strong> <br /><span
+                      id="nodeCenter"
+                      >Flush / Maximum Adhesion</span
+                    >
+                  </p>
+                  <p>
+                    <strong>Stabilizer Pods:</strong> <br /><span id="nodeSides"
+                      >Balanced Hydrostatic Stance</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h4>Adapter 23 3D Simulation Digital Prototype</h4>
+          <p>
+            Each button in the prototype from left to right, is respective of
+            each terrain listed above from top to bottom <br />Research
+            <br />place link to simulation code in Google Colab below
+          </p>
+
           <br />
-          <button>Simulation Code</button>
+          <a
+            href="https://colab.research.google.com/drive/1c4TkasVYFgY-z_nqhZ9b4EDbXQw4ecrb#scrollTo=q3pPGFfGoLVw&line=64&uniqifier=1"
+            target="_blank"
+            class="btn"
+          >
+            Simulation Code</a
+          >
         </div>
 
         <div class="card">
@@ -161,10 +256,10 @@
             alt="image of Teyana Taylor at the MET Gala"
             style="width: 340px; height: 200px"
           />
-          <h4>Main Idea/Research</h4>
+          <h4>Main idea /Research</h4>
           <p>
             place research findings and <br />what this piece of apparel is
-            supposed to do <br />and why it is efficient. <br />place link to
+            supposed to do <br />and place research here. <br />place link to
             simulation code in Google Colab below
           </p>
           <p>Press Run to play</p>
@@ -189,11 +284,24 @@
       <section>
         <section class="grid-three-columns">
           <div class="card">
-            <img
-              src="images/teyana_taylor_durag_cape.png"
-              alt="image of Teyana Taylor at the MET Gala"
-              style="width: 340px; height: 200px"
-            />
+            <iframe
+              width="340"
+              height="200"
+              src="https://www.youtube.com/embed/yConF6pyB4o?si=WxY1zhgQpw2AdowB"
+              title="Nike Aerogami Keeps Runners Cool with Fabric Technology that Reacts to Sweat"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
             <p>Main Section paragraph cards</p>
           </div>
           <div class="card">
@@ -219,11 +327,25 @@
             <p>Main Section paragraph cards</p>
           </div>
           <div class="card">
-            <img
-              src="images/teyana_taylor_durag_cape.png"
-              alt="image of Teyana Taylor at the MET Gala"
-              style="width: 340px; height: 200px"
-            />
+            <iframe
+              width="340"
+              height="200"
+              src="https://www.youtube.com/embed/0kI0wQCwGZI?si=cUqrl8v-2zSVtcnO"
+              title="Inside Teyana Taylor’s Dandy Met Gala Look | The Final Fitting | Vogue"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            >
+            </iframe>
             <p>Main Section paragraph cards</p>
           </div>
         </section>
@@ -247,8 +369,19 @@
             <h4>[place something here]</h4>
             <ul>
               <li>random text</li>
-              <li>random text</li>
-              <li>random text</li>
+              <li>
+                <a
+                  href="https://docs.google.com/presentation/d/12Mjv9R4aeITUGfekggayxovY1vGHDROJtuNC71vsJSA/edit?slide=id.p#slide=id.p"
+                  >Image Source</a
+                >
+                for header
+              </li>
+              <li>
+                <em
+                  >Available on small devices but recommend view on <br />larger
+                  devices for better user experience</em
+                >
+              </li>
             </ul>
             This project was coded by Sophie Clement
           </div>
@@ -275,5 +408,107 @@
         </div>
       </footer>
     </div>
+    <script>
+      // Advanced Nike Telemetry Matrix mapped directly to your technical physics descriptions
+      const nikeMatrix = {
+        1: {
+          name: "Mud",
+          center: "Collapse Inward Laterally (Narrow Profile)",
+          sides: "Auxetic Geometry: Vertical contraction sheds mud instantly",
+          orbit: "90deg 90deg 90%",
+          fov: "40deg",
+          // MUD FIX: Slenders the profile inward horizontally, stretches vertically to slice down deep
+          visualShift: "scale(0.65, 1.35) skewX(0deg)",
+        },
+        2: {
+          name: "Sand",
+          center: "Splay Flat & Spread Outward Mechanically",
+          sides:
+            "Tensor-Ribbing: Micro-structures expand under distributed weight",
+          orbit: "0deg 90deg 85%",
+          fov: "52deg",
+          // SAND FIX: Extremely wide outward footprint flare + flat horizontal pancake compression
+          visualShift: "scale(1.45, 0.55) skewX(0deg)",
+        },
+        3: {
+          name: "Concrete",
+          center: "Unified Flat Plane Matrix Calibration",
+          sides:
+            "Plantar Compression: Internal channels equalize pressure across nodes",
+          orbit: "0deg 75deg 100%",
+          fov: "42deg",
+          // CONCRETE FIX: Perfectly uniform, dense, level compression block
+          visualShift: "scale(0.95, 0.82) skewX(0deg)",
+        },
+        4: {
+          name: "Smooth",
+          center: "Unified Flat Plane Matrix Calibration",
+          sides:
+            "Plantar Compression: Internal channels equalize pressure across nodes",
+          orbit: "0deg 75deg auto",
+          fov: "auto",
+          // SMOOTH FIX: Your 100% natural, standard un-deformed Womp baseline geometry
+          visualShift: "scale(1.0, 1.0) skewX(0deg)",
+        },
+        5: {
+          name: "Rough & Jagged",
+          center: "Independent Piston Passive Displacement Active",
+          sides: "Mind 001 DNA: Asymmetrical terrain-shaped retraction matrix",
+          orbit: "45deg 65deg 80%",
+          fov: "38deg",
+          // ROUGH FIX: Skews the canvas grid dynamically to look uneven, jagged, and independently articulated
+          visualShift: "scale(1.15, 1.05) skewX(12deg)",
+        },
+        6: {
+          name: "Water Puddles",
+          center: "Hydrophobic Micro-Adhesion Activated",
+          sides:
+            "Internal Micro-Channels Sealed. Rubber Squeegee Clearing Phase",
+          orbit: "180deg 85deg 90%",
+          fov: "45deg",
+          // WATER FIX: Flattens base wide to seal outer face flat against the solid floor layout line
+          visualShift: "scale(1.22, 0.78) skewX(0deg)",
+        },
+      };
+
+      const nikeSlider = document.getElementById("nikeTerrainSlider");
+      const hudName = document.getElementById("hudTerrainName");
+      const hudCenter = document.getElementById("nodeCenter");
+      const hudSides = document.getElementById("nodeSides");
+      const nikeModel = document.getElementById("nikeModel");
+      const canvasWrapper = document.getElementById("nike3DCanvasWrapper");
+      const terrainBlocks = document.querySelectorAll(".terrain-block");
+
+      nikeSlider.addEventListener("input", (e) => {
+        const step = parseInt(e.target.value);
+        const activeProfile = nikeMatrix[step];
+
+        // 1. Instantly write updated telemetry data into the dark display card
+        hudName.innerText = `${step}. ${activeProfile.name}`;
+        hudCenter.innerText = activeProfile.center;
+        hudSides.innerText = activeProfile.sides;
+
+        // 2. Pivot camera drone lens viewpoints dynamically to emphasize target node rows
+        if (nikeModel) {
+          nikeModel.setAttribute("camera-orbit", activeProfile.orbit);
+          nikeModel.setAttribute("field-of-view", activeProfile.fov);
+        }
+
+        // 3. Drive structural visual transformations matching mechanical physics specs
+        if (canvasWrapper) {
+          canvasWrapper.style.transform = activeProfile.visualShift;
+        }
+
+        // 4. Update side menu active state selections with your burlywood highlight
+        terrainBlocks.forEach((block) => {
+          const blockStep = parseInt(block.getAttribute("data-step"));
+          if (blockStep === step) {
+            block.classList.add("active-highlight");
+          } else {
+            block.classList.remove("active-highlight");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
