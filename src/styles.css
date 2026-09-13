@@ -6,6 +6,49 @@ body {
   scroll-behavior: smooth;
 }
 
+.fashion-text-glow {
+  /* 1. KEEPS YOUR EXACT TYPOGRAPHY DESIGN VALUES */
+  font-weight: 600;
+  font-size: 24px;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 10px 0;
+
+  /* 2. CRITICAL ACCESSIBILITY FIXES */
+  color: #ffffff !important; /* Force the letters to be solid, pure opaque white */
+  opacity: 1 !important; /* Prevents any structural opacity from fading the letters */
+
+  /* 3. WIDE GRADIENT SHIELD STRIP */
+  /* This creates a wide horizontal capsule that drops to solid black right behind the text */
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.75) 15%,
+    rgba(0, 0, 0, 0.85) 50%,
+    rgba(0, 0, 0, 0.75) 85%,
+    rgba(0, 0, 0, 0) 100%
+  ) !important;
+
+  /* 4. VISUAL BACKDROP BLUR */
+  /* Softens the highly detailed orange heat-map spikes directly under the word */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  /* 5. OVER-SIZED SHADOWS FOR MAXIMUM EDGE SEPARATION */
+  text-shadow:
+    -3px -3px 2px #000000,
+    3px -3px 2px #000000,
+    -3px 3px 2px #000000,
+    3px 3px 2px #000000,
+    0px 4px 12px rgba(0, 0, 0, 0.95);
+
+  /* 6. LAYOUT RENDERING COMPLIANCE */
+  display: inline-block !important;
+  padding: 12px 60px !important; /* Widened horizontal padding so the gradient covers the font edges */
+  box-sizing: border-box;
+}
+
 header {
   text-align: center;
   color: #ffff;
@@ -13,6 +56,95 @@ header {
   margin: 0;
 }
 
+/* 1. FIXED: Removed the scrollbar behavior and the invalid typo rule */
+.media-container {
+  width: 100%;
+}
+
+/* 2. FIXED: Removed 'min-width: 800px' which can trigger scrollbars. 
+      Kept your borders, fonts, and full-width rendering intact. */
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  border-radius: 4px;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+
+  width: 85%;
+
+  margin: 20px auto;
+}
+
+caption {
+  caption-side: bottom;
+  padding: 10px;
+  font-weight: bold;
+}
+
+thead {
+  background-color: darkgray;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+  /* Keeps the contents anchored nicely at the top of the row */
+  vertical-align: top;
+  word-wrap: break-word;
+  font-weight: 700;
+}
+
+/* Force left-alignment for the long text blocks so it is easy to read */
+.text-summary {
+  text-align: left;
+  line-height: 1.4;
+}
+
+tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+
+/* Style the images so they don't break out or scale weirdly */
+/* 1. Prevent the table cell from expanding physically when the image grows */
+td:has(.img-table) {
+  overflow: visible;
+  position: relative; /* Keeps the stacking index manageable */
+}
+
+/* 2. Base style for the shoe mockup image */
+.img-table {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+
+  position: relative;
+  z-index: 1;
+
+  /* Prepares the element for a buttery-smooth zoom effect */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    z-index 0.3s ease;
+  cursor: pointer;
+}
+
+/* 3. The hover state: Enlarges the image smoothly by 40% and lifts it visually */
+.img-table:hover {
+  transform: scale(5.5);
+  z-index: 90;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Adds a premium drop shadow on zoom */
+}
+
+.pitch-paragraph {
+  width: 75%;
+  display: block;
+  margin: 0 auto;
+}
 /* --- Optimized Header Integration (Replaces both of your previous rules) --- */
 .main-hero-header {
   width: 100%;
@@ -88,8 +220,56 @@ header {
 main {
   background-color: #ffff;
 }
+
+hr {
+  width: 47%;
+}
 .img-responsive {
   width: 100%;
+}
+.smart-raincoat {
+  width: 340px;
+  height: 200px;
+  border: 6px ridge gray;
+}
+.smart-raincoat:hover {
+  border: none;
+  cursor: pointer;
+  /* 1. Anchors the zoom from the left edge so it only grows rightward */
+  transform-origin: left center;
+
+  /* 2. Scaled to a large number so the viewer can thoroughly see every detail */
+  transform: scale(2.9);
+
+  z-index: 999;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Adds a premium drop shadow on zoom */
+}
+.adapter-23 {
+  width: 340px;
+  height: 200px;
+  border-radius: 100px 100px 50px 50px;
+  border: 9px ridge gray;
+}
+.adapter-23:hover {
+  border: none;
+  cursor: pointer;
+  transform: scale(1.9);
+  z-index: 999;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.sports-mold {
+  width: 340px;
+  height: 200px;
+  /* border-radius: 5px 25px 25px 25px; */
+  border: 9px ridge gray;
+}
+.sports-mold:hover {
+  border: none;
+  cursor: pointer;
+  transform-origin: right;
+  transform: scale(2);
+  z-index: 999;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 .card {
   background-color: #ffff;
@@ -199,9 +379,13 @@ main p {
   grid-gap: 20px;
 }
 
-.grid-two-columns {
+/* ========================================================
+   CONTINUATION PASTE LAYER START POINT
+   ======================================================== */
+.grid-two-rows {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-gap: 5px;
 }
 
@@ -232,7 +416,7 @@ section {
 
 .embed {
   width: 100%;
-  aspect-ratio: 1 /1;
+  aspect-ratio: 1 / 1;
 }
 
 footer {
@@ -286,14 +470,16 @@ footer h3 {
   font-size: 20px;
   line-height: 30px;
 }
+
+/* Creates space above the footer so the button doesn't touch text content */
 .footer-wrapper {
   position: relative;
   width: 100%;
-  /* Creates space above the footer so the button doesn't touch text content */
   padding-top: 60px;
 }
+
 .back-to-top-button {
-  /*positioning of the button*/
+  /* Positioning of the button */
   position: absolute;
   top: -30px;
   left: 50%;
@@ -323,13 +509,16 @@ footer h3 {
     background-color 0.15s ease-in-out,
     transform 0.15s ease-in-out;
 }
+
 .back-to-top-button:hover {
   background-color: #e5e5e5;
   transform: translateX(-50%) scale(1.02);
 }
+
 .back-to-top-button:active {
   transform: translateX(-50%) scale(0.98);
 }
+
 /* Container to help position the button over your image card */
 .play-wrapper {
   display: flex;
@@ -344,16 +533,10 @@ footer h3 {
   height: 56px;
   border-radius: 50%;
   border: none;
-
-  /* Semi-transparent white with a subtle background blur effect */
-  /* background-color: #831e1e; */
-  /* backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px); */
-
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: not-allowed;
 
   /* Smooth transition animation */
   transition:
@@ -423,11 +606,11 @@ footer h3 {
 }
 
 #nikeTerrainSlider {
-  /* 1. Changes layout engine parsing from horizontal track to vertical track */
+  /* Changes layout engine parsing from horizontal track to vertical track */
   writing-mode: vertical-lr;
   direction: rtl; /* Sets right-to-left layout tracking rules internally */
 
-  /* 2. Standard CSS transformations to scale it cleanly */
+  /* Standard CSS transformations to scale it cleanly */
   width: 12px;
   height: 240px; /* Dictates how long the vertical tracking slider rail stretches down */
   -webkit-appearance: none;
@@ -437,7 +620,7 @@ footer h3 {
   outline: none;
   cursor: grab;
 
-  /* 3. Flips the track so Step 1 (Mud) sits up high and Step 6 (Water) sits down low */
+  /* Flips the track so Step 1 (Mud) sits up high and Step 6 (Water) sits down low */
   transform: rotate(180deg);
 }
 
@@ -501,7 +684,6 @@ footer h3 {
   padding: 20px;
   border-left: 4px solid darkslategray;
   border-radius: 4px;
-  /* margin-top: 15px; */
 }
 
 .hud-title {
@@ -538,15 +720,15 @@ footer h3 {
   width: 100%;
   box-sizing: border-box;
   display: block;
-  margin: 0 auto 20px auto; /* Margin matching your lower dashboard container spacing */
-  padding: 0; /* Clear inner paddings to let the model canvas fill the card column width */
+  margin: 0 auto 20px auto;
+  padding: 0;
   overflow: hidden;
 }
 
 /* Container wrapper for smooth transition effects */
 #nike3DCanvasWrapper {
   width: 100%;
-  height: 380px; /* Reduced from 450px to structurally match the HUD height ratio */
+  height: 380px;
   box-sizing: border-box;
   position: relative;
 }
@@ -557,54 +739,197 @@ model-viewer#nikeModel {
   height: 100%;
   display: block;
   box-sizing: border-box;
-  background-color: #111111; /* Changed from cream to dark ash to match the left UI scheme seamlessly */
-  border-radius: 12px;
-  border: 1px solid #1a1a1a;
-
-  /* Eliminates residual shadow halos or default model borders */
-  outline: none;
-  --poster-color: transparent;
 }
 
-/* Global Media Query Preservations */
-@media (max-width: 960px) {
-  header {
-    padding: 60px 0;
-  }
-  header h1 {
-    font-size: 48px;
-  }
-  header h2 {
-    font-size: 20px;
-  }
-  header h3 {
-    font-size: 12px;
-  }
-  .grid {
-    grid-template-columns: auto;
-    grid-gap: 32px;
-  }
-  .grid-two-columns,
-  .grid-three-columns {
-    grid-template-columns: auto;
+/* ==========================================================================
+   ADDED RESPONSIVE MEDIA LAYER (ONLY EXECUTES FOR MOBILE DIMENSIONS)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100% !important;
+    overflow-x: hidden !important; /* Safe global layout framing lock */
+    position: relative;
   }
 
-  .img-responsive {
-    max-width: 100%;
+  /* 2. PROTECT CONTAINER BLOCKS FROM SCALE BLEEDING */
+  main,
+  .container,
+  .grid-three-columns,
+  .card,
+  .table-container-flat {
+    max-width: 100% !important;
+    box-sizing: border-box;
+    overflow: visible !important; /* Allows layout rows to grow vertically down */
   }
 
-  section {
-    padding: 30px;
+  /* Completely neutralizes desktop structural layout restrictions on mobile screens */
+  .table-container-flat table {
+    display: block !important;
+    width: 100% !important;
+    table-layout: auto !important; /* Breaks out of fixed columns so text wraps completely */
+    border: none !important; /* Removes the heavy outer boundary block */
   }
-  .embed {
-    aspect-ratio: 16 / 9;
-  }
-}
 
-/* Responsive view optimization: Stacks them back to top/bottom cleanly on small mobile screens */
-@media (max-width: 768px) {
-  .nike-terrain-container.side-by-side-split {
-    grid-template-columns: 1fr;
+  .table-container-flat tbody {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* Hide the horizontal desktop header row entirely on small screens */
+  .table-container-flat thead {
+    display: none !important;
+  }
+
+  /* Add spacious padding and clear separating margins to treat each row like a readable article card */
+  .table-container-flat tr {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 35px !important; /* Adds room so rows don't crash into each other vertically */
+    border: 2px solid rgb(140 140 140) !important;
+    border-radius: 8px !important;
+    background-color: #ffffff !important;
+    padding: 15px !important;
+    box-sizing: border-box;
+  }
+
+  /* Clear spatial distribution for content rows */
+  .table-container-flat th[scope="row"],
+  .table-container-flat td {
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+    padding: 10px 6px !important;
+    box-sizing: border-box;
+    word-wrap: break-word; /* Forces single long strings to wrap neatly instead of breaking past borders */
+  }
+
+  /* Structural heading separation */
+  .table-container-flat th[scope="row"] {
+    font-size: 1.2rem !important;
+    color: #272044 !important;
+    border-bottom: 2px solid rgb(228 240 245) !important;
+    margin-bottom: 12px !important;
+    font-weight: 900 !important;
+  }
+
+  /* Style row headers for the small labels */
+  .status-cell {
+    font-size: 0.95rem !important;
+    color: darkslategray !important;
+  }
+
+  /* Insulates the table cell holding the shoe mockup photo so it renders centered with zero clipping boundary blocks */
+  .image-cell {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 15px 0 !important;
+  }
+
+  .img-table {
+    max-width: 160px !important; /* Keeps row images comfortably sized on narrow mobile arrays */
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  .text-summary {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    color: #272044 !important;
+  }
+
+  .main-hero-header {
+    height: auto;
+    min-height: 380px;
+    padding: 40px 15px;
+    aspect-ratio: auto;
+  }
+
+  .heading {
+    font-size: 2.2rem;
+  }
+
+  .fashion-text-glow {
+    font-size: 18px;
+    padding: 10px 25px !important;
+    max-width: 90%;
+  }
+
+  /* Stacks layout hero links vertically */
+  .header-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 85%;
+    margin-top: 20px;
+  }
+
+  .header-buttons a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 12px !important;
+    margin: 0 !important;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  /* Collapses multi-column sections to native rows */
+  .grid-three-columns,
+  .footer-grid,
+  .pitch-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     gap: 25px;
+  }
+
+  /* Adjusts the 3D control board framework onto small viewports */
+  .nike-terrain-container.side-by-side-split {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+  }
+
+  .center-track-column {
+    min-height: auto;
+    padding: 20px 0;
+  }
+
+  #nikeTerrainSlider {
+    writing-mode: horizontal-tb; /* Flips slider back to horizontal for thumb optimization */
+    direction: ltr;
+    transform: none;
+    width: 100%;
+    height: 12px;
+  }
+
+  .pitch-paragraph {
+    width: 92%;
+  }
+
+  .smart-raincoat,
+  .adapter-23,
+  .sports-mold {
+    width: 100% !important;
+    max-width: 320px;
+    height: auto !important;
+    aspect-ratio: 340 / 200;
+  }
+
+  /* MANDATORY PROPS DEFINED TO SECURE FOOTER CAPE IMAGE RETENTION ON SMARTPHONES */
+  footer {
+    background-image:
+      linear-gradient(rgba(39, 32, 68, 0.9), rgba(0, 0, 0, 0.8)),
+      url("../images/teyana_taylor_durag_cape.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
   }
 }

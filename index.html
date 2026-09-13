@@ -33,9 +33,7 @@
       <header class="main-hero-header">
         <h1 class="heading">Technology</h1>
         <h3 class="x">x</h3>
-        <h2 class="subheading" style="background-color: black; color: #ffff">
-          Fashion
-        </h2>
+        <h2 class="fashion-text-glow">Fashion</h2>
         <div class="header-buttons">
           <a href="#learn-more" style="color: darkslategray">Learn more</a>
           <a href="#view-exhibits" style="color: burlywood">View Exhibits</a>
@@ -47,25 +45,114 @@
 
     <main id="learn-more" style="text-align: center">
       <!-- The Pitch Container Structure -->
-      <section class="grid-two-columns pitch-card">
-        <!-- Left Column: The Media Container -->
-        <div class="media-container">
-          <p class="caption-text">
-            <a
-              href="https://docs.google.com/presentation/d/12Mjv9R4aeITUGfekggayxovY1vGHDROJtuNC71vsJSA/edit?slide=id.p#slide=id.p"
-              target="_blank"
-            >
-              Image Source
-            </a>
-          </p>
+      <!-- Removed grid-two-columns completely to free up the horizontal space -->
+      <section class="pitch-card wide-document-layout grid-two-rows">
+        <!-- Using a standard div instead of an inline span element -->
+        <div class="table-container-flat">
+          <table>
+            <caption class="caption-text">
+              <a
+                href="https://docs.google.com/presentation/d/12Mjv9R4aeITUGfekggayxovY1vGHDROJtuNC71vsJSA/edit?slide=id.p#slide=id.p"
+                target="_blank"
+              >
+                Image Source
+              </a>
+              <small
+                >The chart above represents a concept design that is explored
+                later in this website. Adapter 22 has been upgraded to Adapter
+                23.
+              </small>
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col" class="col-concept">Shoe Concept</th>
+                <th scope="col" class="col-status">Version Status</th>
+                <th scope="col" class="col-design">Concept Design</th>
+                <th scope="col" class="col-summary">Summary of Concept</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1: Programmed Version -->
+              <tr>
+                <th scope="row">Program Adapter 22</th>
+                <td class="status-cell" style="font-weight: 200">
+                  Old Version
+                  <br />
+                  <br />
+                  <small>(uses physical hardware technology)</small>
+                </td>
+                <td class="image-cell">
+                  <img
+                    src="/images/mechanical_adapter_22.png"
+                    class="img-table"
+                    alt="Programmed Adapter 22 Mockup Image"
+                  />
+                </td>
+                <td class="text-summary">
+                  In this version, Adapter 22 focuses on functionality over
+                  comfort. It contains 22 mechanical nodes that shift outward
+                  and transition based off what type of terrain it encounters.
+                  The five terrains are mud, sand, concrete, smooth, and rocky
+                  jagged ground since these grounds are the ones people
+                  generally interact with. The nodes reaction process would be
+                  done with a mobile app and code from a microchip in the shoes.
+                </td>
+              </tr>
+              <!-- Row 2: Material Science Version -->
+              <tr>
+                <th scope="row">Material Science Adapter 22</th>
+                <td class="status-cell" style="font-weight: 200">
+                  New Version
+                  <br />
+                  <br />
+                  <em>(uses passive smart materials)</em>
+                </td>
+                <td class="image-cell">
+                  <img
+                    src="/images/collection_adapter_22.png"
+                    class="img-table"
+                    alt="Material Science Adapter 22 Mockup Image"
+                  />
+                </td>
+                <td class="text-summary">
+                  In this version, Adapter 22 prioritizes comfort and
+                  functionality. This leads to the creation of Adapter 23, an
+                  extra node located near the metatarsal or "ball" of the foot.
+                  For now, there are 22 mechanical nodes covered in rubber and
+                  other layers that interact with each other through materials
+                  science to "feel" the terrain its currently interacting with.
+                  This version also introduces the need to test a new terrain:
+                  water, since it is common for people to walk in water puddles
+                  or slip on slick surfaces. Once the nodes push outward to
+                  “feel” the ground, it transitions to the appropriate
+                  protective feature for that terrain.
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <!-- Right Column: The Typography Text Stack Container -->
         <div class="text-content-container">
           <h5><em>Pitch</em></h5>
-          <h2 class="pitch-title">Main Section Title</h2>
-          <h3 class="pitch-subtitle">Main section subheading</h3>
-          <p class="pitch-paragraph">Main Section paragraph</p>
+          <h2 class="pitch-title">Technology x Fashion</h2>
+          <h3 class="pitch-subtitle">
+            Passive Smart Materials and Physical Hardware Technology
+          </h3>
+          <h4>
+            <em>understanding when and how to use and execute each concept</em>
+          </h4>
+          <p class="pitch-paragraph">
+            As technology progresses, the value in efficiency, comfort, and
+            sustainability is being redefined every time it's woven into another
+            piece of clothing. As shown in Mock Exhibits and Simulations A
+            through C, embedding technology into the world of fashion enhances
+            functionality. However, it is important to remember this can be
+            executed elegantly, <em>(like the Nike Mind 001 Shoes)</em>. When
+            the two worlds collide, it doesn't always have to look like heavy
+            hardware mixed with an apparel design. We, the innovative thinkers,
+            have to be smart enough to know when to use code and when the design
+            <em>is</em> the code.
+          </p>
         </div>
       </section>
 
@@ -76,37 +163,128 @@
         <div class="card">
           <h2>Exhibit A</h2>
           <img
-            src="images/teyana_taylor_durag_cape.png"
-            alt="image of Teyana Taylor at the MET Gala"
-            style="width: 340px; height: 200px"
-            class="img-responsive"
+            src="images/smart_raincoat.png"
+            alt="Image of Advanced Raincoat Inspired by Aerogami Technology"
+            title="Image of Advanced Raincoat Inspired by Aerogami Technology"
+            class="smart-raincoat"
           />
-          <h4>Name or suggested name</h4>
-          <p>place description</p>
-          <h4>Header</h4>
-          <p>place something found in mockup stage</p>
+          <h4>Concept name: Impervious</h4>
+          <p>Hover over the image to view details</p>
+          <hr />
+          <h4>The Smart Raincoat</h4>
+          <p class="pitch-paragraph">
+            Imagine you forgot your umbrella at home. You're walking along the
+            sidewalk and before you can run a car already splashed you with
+            dirty puddle water and now your day is ruined. Wouldn't it be nice
+            if you could instantly shield yourself without having to get ready?
+            Like you know the rain is coming and every cell in your body
+            activates to protect you against rainwater?
+          </p>
+          <br />
+          <p class="pitch-paragraph">
+            Inspired by Nike's Aerogami Technology, Impervious is a sleek
+            double-layered waterproof raincoat with a thick outer layer and a
+            thin inner translucent layer. The outer layer's purpose
+            <em>(image on right)</em> is protection and style while the inner
+            layer <em>(image on left, mannequin center)</em> houses an embedded
+            network of micro-moisture sensors. If one of the sensors contacts
+            water, it alerts the spine of the coat. Instantly raising the collar
+            and hood while triggering every textronic cell to transition into
+            waterproof mode. Once dry, it reverts smoothly back to a breathable,
+            everyday luxury jacket. Unlike traditional outerwear, Impervious
+            combines a garment with an intelligent, adaptive shield that
+            responds to external environmental triggers in real time.
+          </p>
         </div>
 
         <div class="card">
           <h2>Exhibit B</h2>
           <img
-            src="images/teyana_taylor_durag_cape.png"
-            alt="image of Teyana Taylor at the MET Gala"
-            style="width: 340px; height: 200px"
+            src="images/adapter_23_imageone.png"
+            alt="Image of Advanced Terrain Footwear"
+            class="adapter-23"
           />
-          <h4>Name or suggested name</h4>
-          <p>place description</p>
+          <img
+            src="images/adapter_23_imagetwo.png"
+            alt="Image of Advanced Terrain Footwear"
+            class="adapter-23"
+          />
+          <h4>Concept Name: Adapter 23</h4>
+          <p>Hover over the image to view details</p>
+          <hr />
+          <h4>Adaptive Terrain Footwear</h4>
+          <p class="pitch-paragraph">
+            Accidentally stepped in a water puddle? Ever accidentally stepped in
+            mud? Lost your balance on jagged shaped or rough ground?
+          </p>
+
+          <p class="pitch-paragraph">
+            Inspired by Nike Mind 001's inward-pushing nodes, the Adapter 23
+            features an outsole with 23 nodes designed to alter and morph its
+            shape based on the terrain it contacts.
+            <br />
+            <br />
+            *The 23rd Node:
+            <br />Building on the 22-node layout of its predecessor, the new
+            model adds an oversized, dedicated node directly beneath the
+            metatarsal area, the foot's primary stress point, to dramatically
+            reduce fatigue and pain.
+            <br />
+            <br />
+            *6-Terrain Adaptability:
+            <br />Engineered to handle mud, sand, concrete, smooth ground,
+            jagged surfaces, and wet or slick surfaces.
+            <br />
+            <br />
+            *Active Dynamic Feedback:
+            <br />
+            Instead of relying on static calculations, the shoe's
+            traction-mapping algorithm
+            <em>(Top Image Left)</em>monitors real-time environmental forces:
+            Impact Frequency, Lateral Displacement, and Moisture Conductivity,
+            bypassing rigid settings for fluid, real-time adjustments.
+            <br />
+            <br />
+            *Smart Material Science:
+            <br />
+            When these sensors detect a terrain shift, they route a a
+            micro-voltage directive to internal electro-rheological fluid
+            layers, instantly shifting node viscosity to alter the shoe's rubber
+            geometry.
+            <br />
+            <br />
+            Note there isn't a design for Adapter 23, however it would appear
+            similar to the images above with an extra node slightly larger than
+            the others near the front of the outsole.
+            <em>(Top Image Right/Bottom Image)</em>
+          </p>
         </div>
 
         <div class="card">
           <h2>Exhibit C</h2>
           <img
-            src="images/teyana_taylor_durag_cape.png"
-            alt="image of Teyana Taylor at the MET Gala"
-            style="width: 340px; height: 200px"
+            src="images/sports_mold.png"
+            alt="Image of Strapless Sports Mold (Mode) Bra"
+            class="sports-mold"
           />
-          <h4>Name or suggested name</h4>
-          <p>place description</p>
+          <h4>Concept Name: Sports Mold Bra</h4>
+          <p>Hover over the image to view details</p>
+          <hr />
+          <h4>Athletic Strapless Sports Mode Bra</h4>
+          <p class="pitch-paragraph">
+            Some are too tight and some are too big. Some are just the right
+            size, but are not comfortable to wear all the time.
+          </p>
+          <br />
+          <p class="pitch-paragraph">
+            Engineered for elite athletic performance, The Sports Mold (Mode)
+            Bra dynamically adapts to the unique contours of the wearer's body
+            to provide comfort and functionality. By minimizing physical
+            distractions, this allows athletes to maintain absolute focus during
+            high-intensity training. Additionally, the smart fabric construct
+            provides active ergonomic reinforcement, supporting proper posture
+            and alignment when the body is under stress.
+          </p>
         </div>
       </section>
 
@@ -117,18 +295,29 @@
         <div class="card">
           <h2>Exhibit A</h2>
           <img
-            src="images/teyana_taylor_durag_cape.png"
-            alt="image of Teyana Taylor at the MET Gala"
+            src="images/unavailable_prototype.png"
+            alt="Unavailable Concept Design"
             style="width: 340px; height: 200px"
             class="img-responsive"
           />
-          <h4>Main Idea/Research</h4>
-          <p>
-            place research findings and <br />what this piece of apparel is
-            supposed to do <br />and why it is efficient. <br />place link to
-            simulation code in Google Colab below
+          <h4>
+            The potential prototype would be based off the simulation stage:
+          </h4>
+          <p class="pitch-paragraph">
+            State Machine:
+            <br />
+            Sensors detect threshold moisture voltage (rain hitting the jacket),
+            a micro-current signal triggers a material reaction.
+            <br />
+            Model this logical transition in a Python or web dashboard to
+            showcase how the software handles: continuous rain vs. a simple
+            splash, calculate dielectric constant so the coat knows the
+            difference between water and other liquids, sensor map, voltage drop
+            threshold, nine ventilation zones (raincoat textronic cells
+            gradually open throughout the coat not unanimously) and a cascade
+            cool down timer system. <br />place link to simulation code
           </p>
-          <p>Press Run to play</p>
+          <p>Code for simulation below</p>
 
           <div class="play-wrapper">
             <button
@@ -140,7 +329,13 @@
             </button>
           </div>
           <br />
-          <button>Simulation Code</button>
+          <a
+            href="https://colab.research.google.com/drive/1c4TkasVYFgY-z_nqhZ9b4EDbXQw4ecrb#scrollTo=eKwffbmELicd&line=91&uniqifier=1"
+            target="_blank"
+            class="btn"
+          >
+            Simulation Code</a
+          >
         </div>
 
         <div class="card">
@@ -233,12 +428,19 @@
           </div>
 
           <h4>Adapter 23 3D Simulation Digital Prototype</h4>
-          <p>
+          <p class="pitch-paragraph">
             Each button in the prototype from left to right, is respective of
-            each terrain listed above from top to bottom <br />Research
-            <br />place link to simulation code in Google Colab below
+            each terrain listed above from top to bottom <br />The simulation
+            portrays how each individual node would react when interacting with
+            one of the multiple terrains. The code that would have been used for
+            Adapter 22 uses parameters like impact velocity, moisture level, and
+            node displacement to calculate the PVDF layer voltage. This is so
+            the node knows which terrain its dealing with for instance, concrete
+            has a high voltage, and sand/mud have a low voltage.
+            <br />
           </p>
 
+          <p>Code for simulation below</p>
           <br />
           <a
             href="https://colab.research.google.com/drive/1c4TkasVYFgY-z_nqhZ9b4EDbXQw4ecrb#scrollTo=q3pPGFfGoLVw&line=64&uniqifier=1"
@@ -252,17 +454,29 @@
         <div class="card">
           <h2>Exhibit C</h2>
           <img
-            src="images/teyana_taylor_durag_cape.png"
-            alt="image of Teyana Taylor at the MET Gala"
+            src="images/unavailable_prototype.png"
+            alt="Unavailable Concept Design"
             style="width: 340px; height: 200px"
+            class="img-responsive"
           />
-          <h4>Main idea /Research</h4>
-          <p>
-            place research findings and <br />what this piece of apparel is
-            supposed to do <br />and place research here. <br />place link to
-            simulation code in Google Colab below
+          <h4>
+            The potential prototype would be based off the simulation stage:
+          </h4>
+          <p class="pitch-paragraph">
+            Use 3D body scanning and motion capture technology to simulate how
+            different breast shapes and sizes move during physical activities
+            like running. Software simulates the fabric's response to sensor
+            inputs, showing how the textronic cells adjust their tightness
+            dynamically to prevent breast movement.
+            <br />
+            Test different materials' elasticity and response time to ensure the
+            mold bra adjusts quickly enough for dynamic sports scenarios. Ensure
+            safety and durability, including washable design and waterproofing
+            for electronics.
+            <br />
+            *The last detail is important because a pocket for devices like
+            airpods and phones may be implemented in the apparel.
           </p>
-          <p>Press Run to play</p>
 
           <div class="play-wrapper">
             <button
@@ -274,81 +488,87 @@
             </button>
           </div>
           <br />
-          <button>Simulation Code</button>
+          <a href="" target="_blank" class="btn" style="cursor: not-allowed">
+            Simulation Code</a
+          >
         </div>
       </section>
 
       <!--Design Inspiration Section-->
-      <h5><em>Design/Inspiration or Embed Videos</em></h5>
-      <h3>Main section subheading</h3>
-      <section>
-        <section class="grid-three-columns">
-          <div class="card">
-            <iframe
-              width="340"
-              height="200"
-              src="https://www.youtube.com/embed/yConF6pyB4o?si=WxY1zhgQpw2AdowB"
-              title="Nike Aerogami Keeps Runners Cool with Fabric Technology that Reacts to Sweat"
-              frameborder="0"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-                web-share;
-              "
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-            <p>Main Section paragraph cards</p>
-          </div>
-          <div class="card">
-            <iframe
-              class="embed"
-              width="340"
-              height="200"
-              src="https://www.youtube.com/embed/jDJCavBaBHs?si=N5RylN2sdxMaSMLu"
-              title="Behind the Science | Nike Mind Technology"
-              frameborder="0"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-                web-share;
-              "
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-            <p>Main Section paragraph cards</p>
-          </div>
-          <div class="card">
-            <iframe
-              width="340"
-              height="200"
-              src="https://www.youtube.com/embed/0kI0wQCwGZI?si=cUqrl8v-2zSVtcnO"
-              title="Inside Teyana Taylor’s Dandy Met Gala Look | The Final Fitting | Vogue"
-              frameborder="0"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-                web-share;
-              "
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+      <h5><em>The Inspiration Behind the Concepts</em></h5>
+      <h3>Behind-the-Scene Design Videos</h3>
+
+      <section class="grid-three-columns">
+        <div class="card">
+          <iframe
+            class="embed"
+            src="https://www.youtube.com/embed/yConF6pyB4o?si=WxY1zhgQpw2AdowB"
+            title="Nike Aerogami Keeps Runners Cool with Fabric Technology that Reacts to Sweat"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="card">
+          <iframe
+            class="embed"
+            src="https://www.youtube.com/embed/jDJCavBaBHs?si=N5RylN2sdxMaSMLu"
+            title="Behind the Science | Nike Mind Technology"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="card">
+          <iframe
+            class="embed"
+            width="340"
+            height="200"
+            src="https://www.youtube.com/embed/0kI0wQCwGZI?si=cUqrl8v-2zSVtcnO"
+            title="Inside Teyana Taylor’s Dandy Met Gala Look | The Final Fitting | Vogue"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          >
+          </iframe>
+          <p>
+            This look inspired another concept idea: an expandable durag
+            convertible 2-in-1
+            <a
+              href="https://docs.google.com/document/d/1djuYiuQaOh0T1utdSB8OxquN7Lhi-Xa-yw4EBPf96yM/edit?usp=sharing"
+              target="_blank"
             >
-            </iframe>
-            <p>Main Section paragraph cards</p>
-          </div>
-        </section>
+              cape/coat
+            </a>
+          </p>
+        </div>
       </section>
     </main>
 
@@ -366,44 +586,68 @@
       <footer>
         <div class="container footer-grid">
           <div>
-            <h4>[place something here]</h4>
+            <h4>***</h4>
             <ul>
-              <li>random text</li>
+              <li style="display: block; margin: 0 auto">
+                To view high-resolution versions of the concepts and images
+                featured across this platform or explore the topic more,<br />
+                visit the public links below
+              </li>
+              <br />
               <li>
+                UI Engineer at Nike:
                 <a
                   href="https://docs.google.com/presentation/d/12Mjv9R4aeITUGfekggayxovY1vGHDROJtuNC71vsJSA/edit?slide=id.p#slide=id.p"
-                  >Image Source</a
+                  >Google Slides</a
                 >
-                for header
               </li>
+              <br />
               <li>
-                <em
-                  >Available on small devices but recommend view on <br />larger
-                  devices for better user experience</em
+                UI Engineer at Nike:
+                <a
+                  href="https://docs.google.com/document/d/1djuYiuQaOh0T1utdSB8OxquN7Lhi-Xa-yw4EBPf96yM/edit?usp=sharing"
                 >
+                  Google Document
+                </a>
               </li>
             </ul>
-            This project was coded by Sophie Clement
           </div>
 
           <div>
-            <h3>About Me</h3>
-            <p>add paragraph here</p>
+            <h3>Contact Me/View More Projects</h3>
+
+            Source code for current platform is available for review on
+            <a href="https://github.com/szouga" target="_blank">GitHub</a>
+            <br />
+            <br />
+            <a
+              href="https://www.linkedin.com/in/sophie-clement-zouga-ndong/"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <br />
+            <br />
+            <a href="szouga9@gmail.com" target="_blank">Email</a>
           </div>
 
           <div>
-            <a
-              href="https://github.com/szouga/shecodes_responsive_webpage_project"
-              target="_blank"
-              >GitHub Repository</a
-            >
-            <a
-              href="https://shecodes-responsive-webpage-project.netlify.app/"
-              target="_blank"
-            >
+            <small>
+              <a
+                href="https://github.com/szouga/shecodes_responsive_webpage_project"
+                target="_blank"
+                >Website</a
+              >
+              deployed at
+
+              <a
+                href="https://shecodes-responsive-webpage-project.netlify.app/"
+                target="_blank"
+              >
+                Netlify
+              </a>
               <br />
-              Netlify
-            </a>
+              © 2026 Sophie Clement Zouga Ndong. All rights reserved.
+            </small>
           </div>
         </div>
       </footer>
