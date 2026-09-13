@@ -170,7 +170,7 @@ td:has(.img-table) {
   /* THE BG IMAGE CONFIGURATION MATRIX */
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)),
-    url("/images/collage.png") !important;
+    url("../images/collage.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
