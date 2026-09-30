@@ -13,4 +13,5 @@ CSS Filters
 HTML Table
 
 The website needs to be responsive 📲.
+
 Link to view Website: https://szouga.github.io/shecodes_responsive_webpage_project/
